@@ -126,7 +126,7 @@ foreach($results as $result)
 											<div class="form-group">
 												<label class="col-sm-4 control-label">Upload New Image 4<span style="color:red">*</span></label>
 												<div class="col-sm-8">
-											<input type="file" name="img4" required>
+											<input type="file" name="img4" accept="image/*" required>
 												</div>
 											</div>
 											<div class="hr-dashed"></div>
