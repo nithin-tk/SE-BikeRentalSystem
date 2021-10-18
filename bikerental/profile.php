@@ -15,8 +15,11 @@ $dob=$_POST['dob'];
 $adress=$_POST['address'];
 $city=$_POST['city'];
 $country=$_POST['country'];
+$license=$_POST['license'];
 $email=$_SESSION['login'];
-$sql="update tblusers set FullName=:name,ContactNo=:mobileno,dob=:dob,Address=:adress,City=:city,Country=:country where EmailId=:email";
+
+
+$sql="update tblusers set FullName=:name,ContactNo=:mobileno,dob=:dob,Address=:adress,City=:city,Country=:country,License=:license where EmailId=:email";
 $query = $dbh->prepare($sql);
 $query->bindParam(':name',$name,PDO::PARAM_STR);
 $query->bindParam(':mobileno',$mobileno,PDO::PARAM_STR);
@@ -25,6 +28,7 @@ $query->bindParam(':adress',$adress,PDO::PARAM_STR);
 $query->bindParam(':city',$city,PDO::PARAM_STR);
 $query->bindParam(':country',$country,PDO::PARAM_STR);
 $query->bindParam(':email',$email,PDO::PARAM_STR);
+$query->bindParam(':license',$license,PDO::PARAM_STR);
 $query->execute();
 $msg="Profile Updated Successfully";
 }
@@ -158,6 +162,10 @@ foreach($results as $result)
              <?php echo htmlentities($result->UpdationDate);?>
             </div>
             <?php } ?>
+            <div class="form-group">
+              <label class="control-label">License</label>
+              <input class="form-control white_bg" name="license" value="<?php echo htmlentities($result->License);?>" id="license" type="text"  required>
+            </div>
             <div class="form-group">
               <label class="control-label">Full Name</label>
               <input class="form-control white_bg" name="fullname" value="<?php echo htmlentities($result->FullName);?>" id="fullname" type="text"  required>
