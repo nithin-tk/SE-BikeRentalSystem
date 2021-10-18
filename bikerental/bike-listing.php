@@ -148,8 +148,7 @@ foreach($results as $result)
                 <select class="form-control" name="fueltype">
                   <option>Select Fuel Type</option>
 <option value="Petrol">Petrol</option>
-<option value="Diesel">Diesel</option>
-<option value="CNG">CNG</option>
+<option value="Electric">Electric</option>
                 </select>
               </div>
 
