@@ -67,16 +67,16 @@ echo "<script>alert('Something went wrong. Please try again');</script>";
           <div class="footer_widget">
             <p>Connect with Us:</p>
             <ul>
-              <li><a href="https://google.com/"><i class="fa fa-facebook-square" aria-hidden="true"></i></a></li>
-              <li><a href="https://google.com/"><i class="fa fa-twitter-square" aria-hidden="true"></i></a></li>
-              <li><a href="https://google.com/"><i class="fa fa-linkedin-square" aria-hidden="true"></i></a></li>
-              <li><a href="https://currents.google.com/u/1/113434436730870106762/"><i class="fa fa-google-plus-square" aria-hidden="true"></i></a></li>
-              <li><a href="https://www.instagram.com/s4n1ty_v3r1f13d/"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+              <li><a href="whatsapp://send?phone=916383866578/"><i class="fa fa-whatsapp" aria-hidden="true"></i></a></li>
+              <li><a href="https://twitter.com/" target="_blank"><i class="fa fa-twitter-square" aria-hidden="true"></i></a></li>
+              <li><a href="https://linkedin.com/" target="_blank"><i class="fa fa-linkedin-square" aria-hidden="true"></i></a></li>
+              <li><a href="https://currents.google.com/u/1/113434436730870106762/" target="_blank"><i class="fa fa-google-plus-square" aria-hidden="true"></i></a></li>
+              <li><a href="https://www.instagram.com/s4n1ty_v3r1f13d/" target="_blank"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
             </ul>
           </div>
         </div>
         <div class="col-md-6 col-md-pull-6">
-          <p class="copy-right">Copyright belongs to <a href="https://www.instagram.com/s4n1ty_v3r1f13d/">Nithin</a></p>
+          <p class="copy-right">Copyright belongs to <a href="https://www.instagram.com/s4n1ty_v3r1f13d/" target="_blank">Nithin</a></p>
         </div>
       </div>
     </div>
