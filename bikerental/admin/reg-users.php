@@ -95,13 +95,14 @@ $msg="Page data updated  successfully";
 									<thead>
 										<tr>
 										<th>#</th>
-												<th> Name</th>
+											<th> Name</th>
 											<th>Email </th>
 											<th>Contact no</th>
 										<th>DOB</th>
 										<th>Address</th>
 										<th>City</th>
 										<th>Country</th>
+										<th>Licence</th>
 										<th>Reg Date</th>
 
 										</tr>
@@ -116,13 +117,14 @@ $msg="Page data updated  successfully";
 										<th>Address</th>
 										<th>City</th>
 										<th>Country</th>
+										<th>Licence</th>
 										<th>Reg Date</th>
 										</tr>
 										</tr>
 									</tfoot>
 									<tbody>
 
-									<?php $sql = "SELECT * from  tblusers ";
+									<?php $sql = "SELECT * from  tblusers";
 $query = $dbh -> prepare($sql);
 $query->execute();
 $results=$query->fetchAll(PDO::FETCH_OBJ);
@@ -136,10 +138,11 @@ foreach($results as $result)
 											<td><?php echo htmlentities($result->FullName);?></td>
 											<td><?php echo htmlentities($result->EmailId);?></td>
 											<td><?php echo htmlentities($result->ContactNo);?></td>
-	<td><?php echo htmlentities($result->dob);?></td>
+											<td><?php echo htmlentities($result->dob);?></td>
 											<td><?php echo htmlentities($result->Address);?></td>
 											<td><?php echo htmlentities($result->City);?></td>
 											<td><?php echo htmlentities($result->Country);?></td>
+											<td><?php echo htmlentities($result->License);?></td>
 											<td><?php echo htmlentities($result->RegDate);?></td>
 										</tr>
 										<?php $cnt=$cnt+1; }} ?>
