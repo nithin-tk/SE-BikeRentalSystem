@@ -260,13 +260,22 @@ echo htmlentities("File not available");
 <div class="panel panel-default">
 <div class="panel-heading">Documents</div>
 <div class="panel-body">
-<div class="hr-dashed"></div>
 <div class="form-group">
 <div class="col-sm-4">
-<a href="docs/<?php echo htmlentities($result->Insurance)?>" target="_blank">View Insurance</a>
+<?php if($result->Insurance=="")
+		{
+		echo htmlentities("Insurance not available");
+		} else {?>
+		<a href="docs/<?php echo htmlentities($result->Insurance)?>" target="_blank">View Insurance</a>
+		<?php } ?>
 </div>
 <div class="col-sm-4">
-<a href="docs/<?php echo htmlentities($result->RegistrationCopy)?>" target="_blank">View Registration Copy</a>
+<?php if($result->RegistrationCopy=="")
+		{
+		echo htmlentities("Registration Copy not available");
+		} else {?>
+		<a href="docs/<?php echo htmlentities($result->Insurance)?>" target="_blank">View Registration Copy</a>
+		<?php } ?>
 </div>
 </div>
 <div class="hr-dashed"></div>
