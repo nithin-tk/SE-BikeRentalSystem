@@ -8,8 +8,7 @@ header('location:index.php');
 }
 else{
 
-if(isset($_POST['submit']))
-{
+if(isset($_POST['submit'])){
 $vehicletitle=$_POST['vehicletitle'];
 $brand=$_POST['brandname'];
 $vehicleoverview=$_POST['vehicleoverview'];
@@ -24,7 +23,19 @@ $brakeassist=$_POST['brakeassist'];
 $crashcensor=$_POST['crashcensor'];
 $id=intval($_GET['id']);
 
-$sql="update tblvehicles set Insurance=:insurance,RegistrationCopy=:rc,VehiclesTitle=:vehicletitle,VehiclesBrand=:brand,VehiclesOverview=:vehicleoverview,PricePerDay=:priceperday,FuelType=:fueltype,ModelYear=:modelyear,SeatingCapacity=:seatingcapacity,AntiLockBrakingSystem=:antilockbrakingsys,BrakeAssist=:brakeassist,CrashSensor=:crashcensor where id=:id ";
+$sql="update tblvehicles 
+		set Insurance=:insurance,
+		RegistrationCopy=:rc,
+		VehiclesTitle=:vehicletitle,
+		VehiclesBrand=:brand,
+		VehiclesOverview=:vehicleoverview,
+		PricePerDay=:priceperday,
+		FuelType=:fueltype,
+		ModelYear=:modelyear,
+		SeatingCapacity=:seatingcapacity,
+		AntiLockBrakingSystem=:antilockbrakingsys,
+		BrakeAssist=:brakeassist,
+		CrashSensor=:crashcensor where id=:id ";
 $query = $dbh->prepare($sql);
 $query->bindParam(':vehicletitle',$vehicletitle,PDO::PARAM_STR);
 $query->bindParam(':brand',$brand,PDO::PARAM_STR);
