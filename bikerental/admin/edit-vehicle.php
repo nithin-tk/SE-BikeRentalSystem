@@ -12,26 +12,20 @@ if(isset($_POST['submit']))
   {
 $vehicletitle=$_POST['vehicletitle'];
 $brand=$_POST['brandname'];
-$vehicleoverview=$_POST['vehicalorcview'];
+$vehicleoverview=$_POST['vehicleoverview'];
 $priceperday=$_POST['priceperday'];
 $fueltype=$_POST['fueltype'];
 $modelyear=$_POST['modelyear'];
 $seatingcapacity=$_POST['seatingcapacity'];
-$airconditioner=$_POST['airconditioner'];
-$powerdoorlocks=$_POST['powerdoorlocks'];
+$insurance=$_POST['insurance'];
+$rc=$_POST['rc'];
 $antilockbrakingsys=$_POST['antilockbrakingsys'];
 $brakeassist=$_POST['brakeassist'];
-$powersteering=$_POST['powersteering'];
-$driverairbag=$_POST['driverairbag'];
-$passengerairbag=$_POST['passengerairbag'];
-$powerwindow=$_POST['powerwindow'];
-$cdplayer=$_POST['cdplayer'];
 $centrallocking=$_POST['centrallocking'];
 $crashcensor=$_POST['crashcensor'];
-$leatherseats=$_POST['leatherseats'];
 $id=intval($_GET['id']);
 
-$sql="update tblvehicles set VehiclesTitle=:vehicletitle,VehiclesBrand=:brand,VehiclesOverview=:vehicleoverview,PricePerDay=:priceperday,FuelType=:fueltype,ModelYear=:modelyear,SeatingCapacity=:seatingcapacity,AirConditioner=:airconditioner,PowerDoorLocks=:powerdoorlocks,AntiLockBrakingSystem=:antilockbrakingsys,BrakeAssist=:brakeassist,PowerSteering=:powersteering,DriverAirbag=:driverairbag,PassengerAirbag=:passengerairbag,PowerWindows=:powerwindow,CDPlayer=:cdplayer,CentralLocking=:centrallocking,CrashSensor=:crashcensor,LeatherSeats=:leatherseats where id=:id ";
+$sql="update tblvehicles set Insurance=:insurance,RegistrationCopy=:rc,VehiclesTitle=:vehicletitle,VehiclesBrand=:brand,VehiclesOverview=:vehicleoverview,PricePerDay=:priceperday,FuelType=:fueltype,ModelYear=:modelyear,SeatingCapacity=:seatingcapacity,AntiLockBrakingSystem=:antilockbrakingsys,BrakeAssist=:brakeassist,CrashSensor=:crashcensor where id=:id ";
 $query = $dbh->prepare($sql);
 $query->bindParam(':vehicletitle',$vehicletitle,PDO::PARAM_STR);
 $query->bindParam(':brand',$brand,PDO::PARAM_STR);
@@ -40,18 +34,11 @@ $query->bindParam(':priceperday',$priceperday,PDO::PARAM_STR);
 $query->bindParam(':fueltype',$fueltype,PDO::PARAM_STR);
 $query->bindParam(':modelyear',$modelyear,PDO::PARAM_STR);
 $query->bindParam(':seatingcapacity',$seatingcapacity,PDO::PARAM_STR);
-$query->bindParam(':airconditioner',$airconditioner,PDO::PARAM_STR);
-$query->bindParam(':powerdoorlocks',$powerdoorlocks,PDO::PARAM_STR);
+$query->bindParam(':insurance',$insurance,PDO::PARAM_STR);
+$query->bindParam(':rc',$rc,PDO::PARAM_STR);
 $query->bindParam(':antilockbrakingsys',$antilockbrakingsys,PDO::PARAM_STR);
 $query->bindParam(':brakeassist',$brakeassist,PDO::PARAM_STR);
-$query->bindParam(':powersteering',$powersteering,PDO::PARAM_STR);
-$query->bindParam(':driverairbag',$driverairbag,PDO::PARAM_STR);
-$query->bindParam(':passengerairbag',$passengerairbag,PDO::PARAM_STR);
-$query->bindParam(':powerwindow',$powerwindow,PDO::PARAM_STR);
-$query->bindParam(':cdplayer',$cdplayer,PDO::PARAM_STR);
-$query->bindParam(':centrallocking',$centrallocking,PDO::PARAM_STR);
 $query->bindParam(':crashcensor',$crashcensor,PDO::PARAM_STR);
-$query->bindParam(':leatherseats',$leatherseats,PDO::PARAM_STR);
 $query->bindParam(':id',$id,PDO::PARAM_STR);
 $query->execute();
 
@@ -177,7 +164,7 @@ continue;
 <div class="form-group">
 <label class="col-sm-2 control-label">Vehical Overview<span style="color:red">*</span></label>
 <div class="col-sm-10">
-<textarea class="form-control" name="vehicalorcview" rows="3" required><?php echo htmlentities($result->VehiclesOverview);?></textarea>
+<textarea class="form-control" name="vehicleoverview" rows="3" required><?php echo htmlentities($result->VehiclesOverview);?></textarea>
 </div>
 </div>
 
@@ -190,14 +177,11 @@ continue;
 <div class="col-sm-4">
 <select class="selectpicker" name="fueltype" required>
 <option value="<?php echo htmlentities($results->FuelType);?>"> <?php echo htmlentities($result->FuelType);?> </option>
-
 <option value="Petrol">Petrol</option>
 <option value="Electric">Electric</option>
 </select>
 </div>
 </div>
-
-
 <div class="form-group">
 <label class="col-sm-2 control-label">Model Year<span style="color:red">*</span></label>
 <div class="col-sm-4">
@@ -220,15 +204,15 @@ continue;
 <div class="form-group">
 <div class="col-sm-4">
 Image 1 <img src="img/vehicleimages/<?php echo htmlentities($result->Vimage1);?>" width="300" height="200" style="border:solid 1px #000">
-<a href="changeimage1.php?imgid=<?php echo htmlentities($result->id)?>">Change Image 1</a>
+<a href="changeimage1.php?imgid=<?php echo htmlentities($result->id)?>">Update Image 1</a>
 </div>
 <div class="col-sm-4">
 Image 2<img src="img/vehicleimages/<?php echo htmlentities($result->Vimage2);?>" width="300" height="200" style="border:solid 1px #000">
-<a href="changeimage2.php?imgid=<?php echo htmlentities($result->id)?>">Change Image 2</a>
+<a href="changeimage2.php?imgid=<?php echo htmlentities($result->id)?>">Update Image 2</a>
 </div>
 <div class="col-sm-4">
 Image 3<img src="img/vehicleimages/<?php echo htmlentities($result->Vimage3);?>" width="300" height="200" style="border:solid 1px #000">
-<a href="changeimage3.php?imgid=<?php echo htmlentities($result->id)?>">Change Image 3</a>
+<a href="changeimage3.php?imgid=<?php echo htmlentities($result->id)?>">Update Image 3</a>
 </div>
 </div>
 
@@ -236,7 +220,7 @@ Image 3<img src="img/vehicleimages/<?php echo htmlentities($result->Vimage3);?>"
 <div class="form-group">
 <div class="col-sm-4">
 Image 4<img src="img/vehicleimages/<?php echo htmlentities($result->Vimage4);?>" width="300" height="200" style="border:solid 1px #000">
-<a href="changeimage4.php?imgid=<?php echo htmlentities($result->id)?>">Change Image 4</a>
+<a href="changeimage4.php?imgid=<?php echo htmlentities($result->id)?>">Update Image 4</a>
 </div>
 <div class="col-sm-4">
 Image 5
@@ -245,7 +229,7 @@ Image 5
 echo htmlentities("File not available");
 } else {?>
 <img src="img/vehicleimages/<?php echo htmlentities($result->Vimage5);?>" width="300" height="200" style="border:solid 1px #000">
-<a href="changeimage5.php?imgid=<?php echo htmlentities($result->id)?>">Change Image 5</a>
+<a href="changeimage5.php?imgid=<?php echo htmlentities($result->id)?>">Update Image 5</a>
 <?php } ?>
 </div>
 </div>
@@ -268,14 +252,18 @@ echo htmlentities("File not available");
 		} else {?>
 		<a href="docs/<?php echo htmlentities($result->Insurance)?>" target="_blank">View Insurance</a>
 		<?php } ?>
+		<input type="file" name="insurance" class="form-control" accept=".pdf">
+		
 </div>
 <div class="col-sm-4">
 <?php if($result->RegistrationCopy=="")
 		{
 		echo htmlentities("Registration Copy not available");
 		} else {?>
-		<a href="docs/<?php echo htmlentities($result->Insurance)?>" target="_blank">View Registration Copy</a>
+		<a href="docs/<?php echo htmlentities($result->RegistrationCopy)?>" target="_blank">View Registration Copy</a>
 		<?php } ?>
+		<input type="file" name="rc" class="form-control" accept=".pdf">
+		
 </div>
 </div>
 <div class="hr-dashed"></div>
