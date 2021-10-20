@@ -9,7 +9,7 @@ header('location:index.php');
 else{
 
 if(isset($_POST['submit']))
-  {
+{
 $vehicletitle=$_POST['vehicletitle'];
 $brand=$_POST['brandname'];
 $vehicleoverview=$_POST['vehicleoverview'];
@@ -21,7 +21,6 @@ $insurance=$_POST['insurance'];
 $rc=$_POST['rc'];
 $antilockbrakingsys=$_POST['antilockbrakingsys'];
 $brakeassist=$_POST['brakeassist'];
-$centrallocking=$_POST['centrallocking'];
 $crashcensor=$_POST['crashcensor'];
 $id=intval($_GET['id']);
 
