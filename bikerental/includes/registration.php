@@ -72,20 +72,20 @@ return true;
                   <input type="text" class="form-control" name="fullname" placeholder="Full Name" required="required">
                 </div>
                       <div class="form-group">
-                  <input type="text" class="form-control" name="mobileno" placeholder="Mobile Number" maxlength="10" required="required">
+                  <input type="tel" class="form-control" name="mobileno" placeholder="Mobile Number" maxlength="10" pattern="[0-9]{10}" required="required">
                 </div>
                 <div class="form-group">
                   <input type="email" class="form-control" name="emailid" id="emailid" onBlur="checkAvailability()" placeholder="Email Address" required="required">
                    <span id="user-availability-status" style="font-size:12px;"></span> 
                 </div>
                 <div class="form-group">
-                  <input type="password" class="form-control" name="password" placeholder="Password" required="required">
+                  <input type="password" class="form-control" name="password" placeholder="Password" minlength="8" required="required">
                 </div>
                 <div class="form-group">
                   <input type="password" class="form-control" name="confirmpassword" placeholder="Confirm Password" required="required">
                 </div>
                 <div class="form-group">
-                  <input type="text" class="form-control" name="license" placeholder="License" required="required">
+                  <input type="text" class="form-control" name="license" placeholder="License Number" required="required">
                 </div>
                 <div class="form-group checkbox">
                   <input type="checkbox" id="terms_agree" required="required" checked="">
